@@ -34,12 +34,12 @@ class cadastro(models.Model):
 
 
         campus = models.CharField(
-            max_length = 20,
+            max_length = 30,
             choices = campus_choice
             )
 
     # Tempo
-        tempo = models.CharField(max_length = 10)
+        tempo = models.FloatField()
 
     #Voltas
         volta = models.IntegerField(default = 0)

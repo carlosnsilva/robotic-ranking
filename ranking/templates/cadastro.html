@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro</title>
+    <style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        flex-direction: column;
+        margin-top: 25px;
+    }
+
+
+    form{
+        font-size: 15px;
+        display: grid;
+        margin-top: 10px;
+    }
+
+    #rank{
+        margin-top: 7px; 
+    }
+
+    </style>
+</head>
+<body>
+    <div class="head">
+    <h1>Cadastro</h1>
+    </div>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type = "submit">Cadastrar</button>
+
+    </form>
+    <button type="button" id="rank"><a href="rank.html">Voltar</a></button>
+    {% if alter %}
+        <a href="{% url 'delete' id=alter.id %}">Excluir</a>
+    {% endif %}
+</body>
+</html>

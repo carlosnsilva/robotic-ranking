@@ -17,7 +17,7 @@ def create(request):
 
 # Read 
 def read(request):
-    resp = cadastro.objects.all().order_by('-nome')
+    resp = cadastro.objects.all().order_by('tempo')
     return render(request,'rank.html', {'resp': resp})
 
 # Delete
@@ -40,3 +40,6 @@ def update(request,id):
         return redirect('read')
 
     return render(request, 'cadastro.html', {'form': form, 'alter': alter}) 
+
+# Calculando as penalidades
+    

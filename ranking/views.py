@@ -42,20 +42,33 @@ def update(request,id):
     return render(request, 'cadastro.html', {'form': form, 'alter': alter}) 
 
 
-def Calculando(request):
-    # Calculando as penalidades
-    DB = cadastro.objects.values_list('Valor_da_penalidade_1','Valor_da_penalidade_2','Valor_da_penalidade_3','Valor_da_penalidade_4','Valor_da_penalidade_5','Valor_da_penalidade_6','Valor_da_penalidade_7','Valor_da_penalidade_8','Valor_da_penalidade_9','Valor_da_penalidade_10','Valor_da_penalidade_11')
-    
+def Calculando(request,id):
+    # Pegando o valores do tempo e das penalidades já transformado em porcentagem
+    value = cadastro.objects.get(id=id) 
+    tempo = value.tempo
+    array_penal=[
+        
+        (value.Valor_da_penalidade_1)/100,
+        
+        (value.Valor_da_penalidade_2)/100,
+        
+        (value.Valor_da_penalidade_3)/100,
+        
+        (value.Valor_da_penalidade_4)/100,
+        
+        (value.Valor_da_penalidade_5)/100,
+        
+        (value.Valor_da_penalidade_6)/100,
+        
+        (value.Valor_da_penalidade_7)/100,
+        
+        (value.Valor_da_penalidade_8)/100,
+        
+        (value.Valor_da_penalidade_9)/100,
+        
+        (value.Valor_da_penalidade_10)/100,
+        
+        (value.Valor_da_penalidade_11)/100
+    ]
+   
 
-'''    
-l=[]
-array=[(1,2,3),(4,5,6),(7,8,9)]
-print(array)
-for i in array:
-  for j in (i):
-    print(j)
-    l.append(j)
-
-print(l)
-
-Percorrendo nas tuplas'''    

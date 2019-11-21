@@ -41,5 +41,21 @@ def update(request,id):
 
     return render(request, 'cadastro.html', {'form': form, 'alter': alter}) 
 
-# Calculando as penalidades
+
+def Calculando(request):
+    # Calculando as penalidades
+    DB = cadastro.objects.values_list('Valor_da_penalidade_1','Valor_da_penalidade_2','Valor_da_penalidade_3','Valor_da_penalidade_4','Valor_da_penalidade_5','Valor_da_penalidade_6','Valor_da_penalidade_7','Valor_da_penalidade_8','Valor_da_penalidade_9','Valor_da_penalidade_10','Valor_da_penalidade_11')
     
+
+'''    
+l=[]
+array=[(1,2,3),(4,5,6),(7,8,9)]
+print(array)
+for i in array:
+  for j in (i):
+    print(j)
+    l.append(j)
+
+print(l)
+
+Percorrendo nas tuplas'''    

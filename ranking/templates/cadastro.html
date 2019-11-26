@@ -42,6 +42,7 @@
     <button type="button" id="rank"><a href="rank.html">Voltar</a></button>
     {% if alter %}
         <a href="{% url 'delete' id=alter.id %}">Excluir</a>
+        <a href="{% url 'pontuacao' id=alter.id %}">Calcular</a>
     {% endif %}
 </body>
 </html>

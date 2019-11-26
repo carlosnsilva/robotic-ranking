@@ -42,8 +42,8 @@ def update(request,id):
     return render(request, 'cadastro.html', {'form': form, 'alter': alter}) 
 
 
-def Calculando(request,id):
-    # Pegando o valores do tempo e das penalidades já transformado em porcentagem
+def pontuacao(request,id):
+    # Pegando o valores do tempo e das penalidades já transformado em porcentagem e calculando
     value = cadastro.objects.get(id=id) 
     tempo = value.tempo
     array_penal=[
@@ -100,5 +100,7 @@ def Calculando(request,id):
 
     # Colocando no Banco o novo valor do tempo após aplicado as penalidades
     value.tempo = tempo_result
+    
+    value.save()
 
     return redirect('read')
